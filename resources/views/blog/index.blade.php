@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="row">
-        <div style="padding-left: 20px">
+        <div >
             <a href="{{ route('blog.create') }}" class="btn btn-dark" style="margin: 10px">Add Blog</a>
         </div>
         <div class="col-sm-12">
@@ -17,7 +17,6 @@
                     <td>ID</td>
                     <td>category</td>
                     <td>title</td>
-                    <td>description</td>
                     <td>Actions</td>
                 </tr>
                 </thead>
@@ -27,7 +26,6 @@
                         <td>{{ $blog->id }}</td>
                         <td>{{ $blog->category }}</td>
                         <td>{{ $blog->title }}</td>
-                        <td>{{ $blog->description }}</td>
                         <td >
                             <a href="{{ route('blog.edit',$blog->id)}}"  class="btn btn-primary">Edit</a>
                             <form action="{{ route('blog.destroy',$blog->id)}}" style="display: inline-block" method="post">

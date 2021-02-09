@@ -15,11 +15,13 @@ use App\Http\Controllers\BlogController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', 'BlogController@indexView')->name('welcome');
 
 Auth::routes(['register' => false]);
+
+Route::get('/404',function (){
+    return view('errors.404');
+})->name('404');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -27,4 +29,4 @@ Route::resource('/home/users','UserController')->middleware('auth');
 
 Route::resource('/home/blog','BlogController',['except' => ['show']])->middleware('auth');
 
-Route::get('/blog',[BlogController::class,'show']);
+Route::get('/blog/{id}',[BlogController::class,'show'])->name('blog.view');

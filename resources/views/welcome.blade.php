@@ -44,8 +44,8 @@
                 <li class="active"><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <!-- <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#team">Team</a></li> -->
+                <!-- <li><a href="#portfolio">Portfolio</a></li>-->
+                <li><a href="#testimonials">Blog</a></li>
                 <li class="drop-down"><a href="/soon">Courses</a>
                     <ul>
                         <li><a href="/soon">Graphic Design</a></li>
@@ -115,35 +115,35 @@
     </section><!-- End About Section -->
 
     <!-- ======= Counts Section ======= -->
-    <!-- <section id="counts" class="counts">
-      <div class="container">
+{{--     <section id="counts" class="counts">--}}
+{{--      <div class="container">--}}
 
-        <div class="row counters">
+{{--        <div class="row counters">--}}
 
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">232</span>
-            <p>Clients</p>
-          </div>
+{{--          <div class="col-lg-3 col-6 text-center">--}}
+{{--            <span data-toggle="counter-up">232</span>--}}
+{{--            <p>Clients</p>--}}
+{{--          </div>--}}
 
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">521</span>
-            <p>Projects</p>
-          </div>
+{{--          <div class="col-lg-3 col-6 text-center">--}}
+{{--            <span data-toggle="counter-up">521</span>--}}
+{{--            <p>Projects</p>--}}
+{{--          </div>--}}
 
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">1,463</span>
-            <p>Hours Of Support</p>
-          </div>
+{{--          <div class="col-lg-3 col-6 text-center">--}}
+{{--            <span data-toggle="counter-up">1,463</span>--}}
+{{--            <p>Hours Of Support</p>--}}
+{{--          </div>--}}
 
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">15</span>
-            <p>Hard Workers</p>
-          </div>
+{{--          <div class="col-lg-3 col-6 text-center">--}}
+{{--            <span data-toggle="counter-up">15</span>--}}
+{{--            <p>Hard Workers</p>--}}
+{{--          </div>--}}
 
-        </div>
+{{--        </div>--}}
 
-      </div>
-    </section> -->
+{{--      </div>--}}
+{{--    </section> --}}
     <!-- End Counts Section -->
 
     <!-- ======= Services Section ======= -->
@@ -240,164 +240,121 @@
 
 
     <!-- ======= Testimonials Section ======= -->
-    <!-- <section id="testimonials" class="testimonials section-bg">
+     <section id="testimonials" class="testimonials section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Sayings</h2>
+          <h2>Last Posts</h2>
         </div>
 
         <div class="owl-carousel testimonials-carousel">
 
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              PERFECTION IS THE ENEMY OF PERFECTLY ADEQUATE.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-            <h3>Saul Goodman</h3>
-            <h4>Ceo &amp; Founder</h4>
-          </div>
+            @foreach($blogs as $blog)
+                <div class="testimonial-item" >
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <div>{{ $blog->title }}</div>
+                        </div>
+                        <div class="card-body">
+                            <p style="max-height: 100px">{{ substr(strip_tags($blog->description), 0, 70) }}{{ strlen(strip_tags($blog->description)) > 70 ? "..." : "" }}</p>
+                        </div>
+                        <br><a href="{{ route('blog.view', $blog->id) }}" class="btn btn-primary">Reed More</a>
+                    </div>
 
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              In life, you may face hard times. But in the face of adversity, always seek to remain positive. What we think, will eventually become our life. And if you think positive, you will have a positive life.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-            <h3>Sara Wilsson</h3>
-            <h4>Designer</h4>
-          </div>
-
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              KHUDKO BADLNE KI HAMNE SARI KOSIS KARLI
-JISHKO JO PASAND THA WO RABYEYA HAMNE APNALI
-MUJHE YE TO PATNAHI YE SAHI THA YAA GALAT
-APNO KE KHUSI KE LIYE HAMNE KHUDKI BALIDAN HI DE DI
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-            <h3>Jena Karlis</h3>
-            <h4>Store Owner</h4>
-          </div>
-
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Finding what you’re truly passionate about is such a magical feeling.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-            <h3>Matt Brandon</h3>
-            <h4>Freelancer</h4>
-          </div>
-
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              No day but today
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-            <h3>John Larson</h3>
-            <h4>Entrepreneur</h4>
-          </div>
+                </div>
+            @endforeach
 
         </div>
 
       </div>
-    </section> -->
+    </section>
     <!-- End Testimonials Section -->
 
 
     <!-- ======= Pricing Section ======= -->
-    <!-- <section id="pricing" class="pricing section-bg">
-      <div class="container" data-aos="fade-up">
+{{--     <section id="pricing" class="pricing section-bg">--}}
+{{--      <div class="container" data-aos="fade-up">--}}
 
-        <div class="section-title">
-          <h2>Pricing</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
+{{--        <div class="section-title">--}}
+{{--          <h2>Pricing</h2>--}}
+{{--          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>--}}
+{{--        </div>--}}
 
-        <div class="row">
+{{--        <div class="row">--}}
 
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="box">
-              <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
+{{--          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">--}}
+{{--            <div class="box">--}}
+{{--              <h3>Free</h3>--}}
+{{--              <h4><sup>$</sup>0<span> / month</span></h4>--}}
+{{--              <ul>--}}
+{{--                <li>Aida dere</li>--}}
+{{--                <li>Nec feugiat nisl</li>--}}
+{{--                <li>Nulla at volutpat dola</li>--}}
+{{--                <li class="na">Pharetra massa</li>--}}
+{{--                <li class="na">Massa ultricies mi</li>--}}
+{{--              </ul>--}}
+{{--              <div class="btn-wrap">--}}
+{{--                <a href="#" class="btn-buy">Buy Now</a>--}}
+{{--              </div>--}}
+{{--            </div>--}}
+{{--          </div>--}}
 
-          <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
-            <div class="box featured">
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
+{{--          <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">--}}
+{{--            <div class="box featured">--}}
+{{--              <h3>Business</h3>--}}
+{{--              <h4><sup>$</sup>19<span> / month</span></h4>--}}
+{{--              <ul>--}}
+{{--                <li>Aida dere</li>--}}
+{{--                <li>Nec feugiat nisl</li>--}}
+{{--                <li>Nulla at volutpat dola</li>--}}
+{{--                <li>Pharetra massa</li>--}}
+{{--                <li class="na">Massa ultricies mi</li>--}}
+{{--              </ul>--}}
+{{--              <div class="btn-wrap">--}}
+{{--                <a href="#" class="btn-buy">Buy Now</a>--}}
+{{--              </div>--}}
+{{--            </div>--}}
+{{--          </div>--}}
 
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
-            <div class="box">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
+{{--          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">--}}
+{{--            <div class="box">--}}
+{{--              <h3>Developer</h3>--}}
+{{--              <h4><sup>$</sup>29<span> / month</span></h4>--}}
+{{--              <ul>--}}
+{{--                <li>Aida dere</li>--}}
+{{--                <li>Nec feugiat nisl</li>--}}
+{{--                <li>Nulla at volutpat dola</li>--}}
+{{--                <li>Pharetra massa</li>--}}
+{{--                <li>Massa ultricies mi</li>--}}
+{{--              </ul>--}}
+{{--              <div class="btn-wrap">--}}
+{{--                <a href="#" class="btn-buy">Buy Now</a>--}}
+{{--              </div>--}}
+{{--            </div>--}}
+{{--          </div>--}}
 
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
-            <div class="box">
-              <span class="advanced">Advanced</span>
-              <h3>Ultimate</h3>
-              <h4><sup>$</sup>49<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
+{{--          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">--}}
+{{--            <div class="box">--}}
+{{--              <span class="advanced">Advanced</span>--}}
+{{--              <h3>Ultimate</h3>--}}
+{{--              <h4><sup>$</sup>49<span> / month</span></h4>--}}
+{{--              <ul>--}}
+{{--                <li>Aida dere</li>--}}
+{{--                <li>Nec feugiat nisl</li>--}}
+{{--                <li>Nulla at volutpat dola</li>--}}
+{{--                <li>Pharetra massa</li>--}}
+{{--                <li>Massa ultricies mi</li>--}}
+{{--              </ul>--}}
+{{--              <div class="btn-wrap">--}}
+{{--                <a href="#" class="btn-buy">Buy Now</a>--}}
+{{--              </div>--}}
+{{--            </div>--}}
+{{--          </div>--}}
 
-        </div>
+{{--        </div>--}}
 
-      </div>
-    </section> -->
+{{--      </div>--}}
+{{--    </section>--}}
     <!-- End Pricing Section -->
 
     <!-- ======= Frequently Asked Questions Section ======= -->
@@ -449,7 +406,8 @@ APNO KE KHUSI KE LIYE HAMNE KHUDKI BALIDAN HI DE DI
             </div>
 
         </div>
-    </section><!-- End Frequently Asked Questions Section -->
+    </section>
+    <!-- End Frequently Asked Questions Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact section-bg">
@@ -491,7 +449,8 @@ APNO KE KHUSI KE LIYE HAMNE KHUDKI BALIDAN HI DE DI
             </div>
         </div>
 
-    </section><!-- End Contact Section -->
+    </section>
+    <!-- End Contact Section -->
 
 </main><!-- End #main -->
 
@@ -563,7 +522,8 @@ APNO KE KHUSI KE LIYE HAMNE KHUDKI BALIDAN HI DE DI
         </div>
 
     </div>
-</footer><!-- End Footer -->
+</footer>
+<!-- End Footer -->
 
 <a href="#hero" class="back-to-top"><i class="icofont-simple-up"></i></a>
 <div id="preloader"></div>

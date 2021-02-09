@@ -60,12 +60,17 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return Response
+     * @param $id
+     * @return Application|Factory|Response|View
      */
     public function show($id)
     {
-
+          $blogs =  Blog::find($id);
+//          return $blogs;
+        if (!$blogs){
+            return redirect('404');
+        }
+        return view('blog.show',compact('blogs'));
     }
 
     /**
@@ -117,5 +122,10 @@ class BlogController extends Controller
         $blog->delete();
 
         return redirect('/home/blog')->with('success', 'Post deleted!');
+    }
+
+    public function indexView(){
+        $blogs = Blog::all();
+        return view('welcome',compact('blogs'));
     }
 }

@@ -88,7 +88,7 @@
                     @endif
                 </div>
                 <div class="row">
-                    <div class="text-center text-light" style="padding-left: 100px">
+                    <div class="text-center text-light">
                         @yield('dash-content')
                     </div>
                 </div>
