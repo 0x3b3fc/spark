@@ -6,8 +6,10 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>Spark Media</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <meta name="description"
+          content="Spark Media Is A Home Company For Development, Marketing And Printing Services - we started at 2021 with a team made up of Friends in all internet fields" />
+    <meta name="copyright" content="Spark Media" />
+    <meta name="author" content="Spark Media Web Development Team" />
 
     <!-- Favicons -->
     <link href="{{ asset('assets/img/logo.png')}}" rel="icon">

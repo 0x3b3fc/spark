@@ -3,6 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Spark Media Is A Home Company For Development, Marketing And Printing Services - we started at 2021 with a team made up of Friends in all internet fields" />
+    <meta name="copyright" content="Spark Media" />
+    <meta name="author" content="Spark Media Web Development Team" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

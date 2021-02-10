@@ -7,9 +7,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="{{ asset('error/images/favicon.svg') }}" type="image/x-icon">
-    <meta name="keywords"
-          content="HTML, CSS, JavaScript, JQuery, Bootstrap, Graphic Design, Printing, Marketing, Motion Graphic">
-    <meta name="author" content="Spark Media">
+    <meta name="description"
+          content="Spark Media Is A Home Company For Development, Marketing And Printing Services - we started at 2021 with a team made up of Friends in all internet fields" />
+    <meta name="copyright" content="Spark Media" />
+    <meta name="author" content="Spark Media Web Development Team" />
     <title>Spark Media</title>
     <link href="{{ asset('error/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('error/css/foundation-rtl.css') }}" rel="stylesheet">
